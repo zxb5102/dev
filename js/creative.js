@@ -47,6 +47,10 @@
 
     var whellTime;
     $('body').mousewheel(function (event, delta, deltaX, deltaY) {
+        upDown(delta)
+        event.preventDefault();
+    });
+    function upDown(delta) {
         clearTimeout(whellTime);
         // console.log(11);
         whellTime = window.setTimeout(function () {
@@ -66,8 +70,21 @@
                 scrollTop: (flagEle.offset().top)
             }, 1250, 'easeInOutExpo');
         }, 100);
+    }
+
+    var myElement = $('body')[0];    // create a simple instance
+    // by default, it only adds horizontal recognizers
+    var mc = new Hammer(myElement);
+
+    // listen to events...
+    mc.on("swipedown swipeup", function (ev) {
+        if (ev.type === 'swipeup') {
+            upDown(1)
+        } else {
+            upDown(-1)
+        }
         event.preventDefault();
-        // event.
+        // myElement.textContent = ev.type + " gesture detected.";
     });
 
 })(jQuery); // End of use strict
