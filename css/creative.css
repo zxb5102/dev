@@ -178,6 +178,7 @@ aside {
 header {
     position: relative;
     width: 100%;
+    overflow-x: hidden;
     min-height: auto;
     text-align: center;
     color: #fff;
