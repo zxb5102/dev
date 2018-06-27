@@ -52,8 +52,7 @@ p {
 }
 
 .bg-primary {
-    background-color: #005bac
-;
+    background-color: #005bac;
 }
 
 .bg-dark {
@@ -65,8 +64,9 @@ p {
     color: rgba(255, 255, 255, .7);
 }
 
+footer,
 section {
-    padding: 100px 0;
+    padding: 70px 0;
 }
 
 aside {
@@ -113,7 +113,7 @@ aside {
 
 .navbar-default .nav>li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #005bac  !important;
+    color: #70ca39 !important;
     background-color: transparent;
 }
 
@@ -153,7 +153,8 @@ aside {
     .navbar-default.affix {
         border-color: rgba(34, 34, 34, .05);
         /* background-color: #fff; */
-        background-color: #2fa2da;
+        /* background-color: #2fa2da; */
+        background-color: rgba(1, 9, 12, 0.4588235294117647);
     }
     .navbar-default.affix .navbar-header .navbar-brand {
         font-size: 14px;
@@ -170,7 +171,7 @@ aside {
     }
     .navbar-default.affix .nav>li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: #f05f40;
+        color: #70ca39;
     }
 }
 
@@ -216,7 +217,7 @@ header .header-content .header-content-inner p {
 
 @media(min-width:768px) {
     header {
-        min-height: 100%;
+        /* min-height: 100%; */
     }
     header .header-content {
         position: absolute;
@@ -441,7 +442,7 @@ fieldset[disabled] .btn-primary.active {
     border-radius: 300px;
     text-transform: uppercase;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 700;
+    /* font-weight: 700; */
     box-shadow: 0px 1px 1px 1px black;
 }
 
@@ -481,4 +482,158 @@ body {
     top: 33%;
     width: 47%;
     height: auto;
+}
+
+.common-header-height {
+    height: calc(100% - 258px);
+}
+
+#integration {
+    background-image: url(./img/integration.png)
+}
+
+#maintenance {
+    background-image: url(./img/maintenance.png)
+}
+
+#train {
+    background-image: url(./img/train.png)
+}
+
+.integration-text-hold h2,
+.maintenance-text-hold h2,
+.train-text-hold h2 {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.integration-text-hold p,
+.maintenance-text-hold p,
+.train-text-hold p {
+    font-size: 35px;
+    letter-spacing: 4px;
+}
+
+.integration-text-hold {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    text-align: left;
+}
+
+.train-text-hold {
+    position: absolute;
+    left: 11%;
+    top: 11%;
+    text-align: left;
+    color: #00479d;
+}
+
+.maintenance-text-hold {
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    text-align: left;
+}
+
+section {
+    min-height: 258px;
+}
+.code{
+    height: 112px;
+}
+
+@media screen and (max-width: 768px) {
+    .code{
+        /* margin-left: 45px; */
+        margin-bottom: 20px;
+        height: 80px;
+    }
+    .common-header-height {
+        height: 65%;
+    }
+    footer,
+    section {
+        padding: 0px;
+        min-height: 0px;
+        height: 35%;
+        position: relative;
+    }
+    section>div.container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .btn-xl {
+        padding: 9px 20px;
+    }
+    .integration-text-hold h2,
+    .maintenance-text-hold h2,
+    .train-text-hold h2 {
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+    .integration-text-hold p,
+    .maintenance-text-hold p,
+    .train-text-hold p {
+        font-size: 15px;
+        letter-spacing: 4px;
+    }
+    .top-text {
+        position: absolute;
+        left: 5%;
+        top: 42%;
+        width: 90%;
+        height: auto;
+    }
+    header {
+        background-position-x: 70%;
+    }
+    footer{
+        padding: 20px 0px;
+        text-align: center;
+        height:auto;
+    }
+    p{
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    .integration-text-hold {
+        position: absolute;
+        bottom: 25%;
+        left: 10%;
+        text-align: left;
+    }
+    #maintenance {
+        /* background-image: url(./img/maintenance.png); */
+        background-position-x: 0%;
+        /* background-position-y: 10px; */
+    }
+    .maintenance-text-hold {
+        position: absolute;
+        bottom: 22%;
+        right: 0px;
+        text-align: left;
+        left: 20px;
+    }
+    .train-text-hold {
+        position: absolute;
+        left: 11%;
+        top: 17%;
+        text-align: left;
+        color: #00479d;
+    }
+    .navbar-default{
+        /* background-color: rgba(0,0,0,0.2); */
+        background-color: rgba(0, 150, 212, 0.76);
+        /* background-color:rgba(255, 255, 255, 0.50) */
+    }
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+        background-color: transparent;
+    }
+    .navbar-default .navbar-toggle .icon-bar{
+        background-color:#cacaca;
+    }
 }
