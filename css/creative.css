@@ -187,7 +187,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url("../img/top.png");
+    background-image: url("../img/top.jpg");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -494,11 +494,11 @@ body {
 }
 
 #integration {
-    background-image: url(../img/integration.png)
+    background-image: url(../img/integration.jpg)
 }
 
 #maintenance {
-    background-image: url(../img/maintenance.png)
+    background-image: url(../img/maintenance.jpg)
 }
 
 #train {
