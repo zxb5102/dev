@@ -669,6 +669,6 @@ section {
         background-color: #cacaca;
     }
     .only-pda-letter-space {
-        letter-spacing: 2px !important;
+        letter-spacing: 1px !important;
     }
 }
