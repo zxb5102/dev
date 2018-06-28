@@ -672,3 +672,11 @@ section {
         letter-spacing: 1px !important;
     }
 }
+.address:hover{
+    color:#60a9ea;
+    cursor: pointer;
+}
+.address a{
+    color:inherit;
+    text-decoration: unset;
+}
