@@ -52,9 +52,7 @@
     });
     function upDown(delta) {
         clearTimeout(whellTime);
-        // console.log(11);
         whellTime = window.setTimeout(function () {
-            // console.log(11);
             var flagEle, next;
 
             if (delta === 1) {
@@ -72,19 +70,30 @@
         }, 100);
     }
 
-    var myElement = $('body')[0];    // create a simple instance
+    // var myElement = $('#about')[0];    // create a simple instance
     // by default, it only adds horizontal recognizers
-    var mc = new Hammer(myElement);
+    // var mc = new Hammer(myElement);
+    // console.log(mc);
 
     // listen to events...
-    mc.on("swipedown swipeup", function (ev) {
-        if (ev.type === 'swipeup') {
-            upDown(1)
-        } else {
-            upDown(-1)
-        }
-        event.preventDefault();
-        // myElement.textContent = ev.type + " gesture detected.";
-    });
+    // mc.on("panup pandown", function (ev) {
+    //     console.log(ev.type);
+    //     if (ev.type === 'panup') {
+    //         upDown(-1)
+    //     } else {
+    //         upDown(1)
+    //     }
+    //     ev.preventDefault();
+    //     // myElement.textContent = ev.type + " gesture detected.";
+    // });
+
+
+
+    // window.addEventListener('scroll', function (ev) {
+    //     // console.log('scroll');
+    //     // $('html').scrollTop(0);
+    //     // console.log();
+    //     ev.preventDefault();
+    // });
 
 })(jQuery); // End of use strict
