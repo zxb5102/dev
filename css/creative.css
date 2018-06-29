@@ -490,7 +490,7 @@ body {
 }
 
 .common-header-height {
-    height: calc(100% - 167px);
+    height: calc(100vh - 167px);
 }
 
 #integration {
@@ -575,6 +575,19 @@ section {
     font-size: 12px;
 }
 
+@media screen and (min-width: 768px) {
+    .swiper-slide {
+        height: 100%;
+    }
+    .swiper-container {
+        /* overflow: scroll; */
+        /* height:100%; */
+    }
+    .swiper-wrapper {
+        display: block;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .code {
         /* margin-left: 45px; */
@@ -626,6 +639,11 @@ section {
         padding: 20px 0px;
         text-align: center;
         height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
     }
     p {
         margin-bottom: 5px;
@@ -671,12 +689,43 @@ section {
     .only-pda-letter-space {
         letter-spacing: 1px !important;
     }
+    .swiper-slide {
+        background-color: rgba(43, 46, 53, 1);
+        position: relative;
+    }
+    .swiper-container {
+        height: 100%;
+    }
 }
-.address:hover{
-    color:#60a9ea;
+
+.address:hover {
+    color: #60a9ea;
     cursor: pointer;
 }
-.address a{
-    color:inherit;
+
+.address a {
+    color: inherit;
     text-decoration: unset;
+}
+
+/* @supports (-webkit-transform: scale(0)) { */
+
+.colorful {
+    /*-webkit-mask-image: linear-gradient(to right, red, orange, yellow, green, cyan, blue, purple);*/
+    background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-size: 200% 100%;
+    animation: bgp 5s infinite linear;
+}
+
+/* } */
+
+@-webkit-keyframes bgp {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
 }
