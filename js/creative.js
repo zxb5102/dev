@@ -6,13 +6,23 @@
 
 (function ($) {
     "use strict"; // Start of use strict
-
+    var mySwiper;
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function (event) {
         var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top)
-        }, 1250, 'easeInOutExpo');
+        var pda = $(window).width() <= 768 ? true : false;
+        if (pda) {
+            var pare = $anchor.parent();
+            var chAray = $(".navbar-nav").children().toArray();
+            // debugger;g
+            var dex = chAray.indexOf(pare[0]);
+            // console.log(dex);
+            mySwiper.slideTo(dex);
+        } else {
+            $('html, body').stop().animate({
+                scrollTop: ($($anchor.attr('href')).offset().top)
+            }, 1250, 'easeInOutExpo');
+        }
         event.preventDefault();
     });
 
@@ -43,7 +53,11 @@
     })
 
     // Initialize WOW.js Scrolling Animations
-    new WOW().init();
+    // if ($(window).width() > 768) {
+    new WOW({
+        mobile: false,
+    }).init();
+    // }
 
     var whellTime;
     $('body').mousewheel(function (event, delta, deltaX, deltaY) {
@@ -87,7 +101,39 @@
     //     // myElement.textContent = ev.type + " gesture detected.";
     // });
 
+    if ($(window).width() <= 768) {
+        // console.log(111);
+        mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            loop: false,
+            on: {
+                slideChange: function () {
+                    // console.log();
+                    $(".navbar-nav ").children().removeClass("active");
+                    $(".navbar-nav ").children().eq(this.activeIndex).addClass("active");
+                    // alert();//切换结束时，告诉我现在是第几个slide
+                },
+            },
 
+            // 如果需要分页器
+            // pagination: {
+            //     el: '.swiper-pagination',
+            // },
+
+            // 如果需要前进后退按钮
+            // navigation: {
+            //     nextEl: '.swiper-button-next',
+            //     prevEl: '.swiper-button-prev',
+            // },
+
+            // 如果需要滚动条
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+        })
+        $(".navbar-nav ").children().removeClass("active");
+        $(".navbar-nav ").children().eq(0).addClass("active");
+    };
 
     // window.addEventListener('scroll', function (ev) {
     //     // console.log('scroll');
